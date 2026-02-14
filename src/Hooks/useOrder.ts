@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { MenuItems, OrderItems } from "../Types";
 
 export default function useOrder() {
 
+	const initialState = ((): OrderItems[] => {
+		const localStorageTips = localStorage.getItem('order');
+		return localStorageTips ? JSON.parse(localStorageTips): []
+	})
+
 	{/** Genericos en react: Inferimos desde el generico que tipo debe ser nuestro estado inicial*/ }
-	const [order, setOrder] = useState<OrderItems[]>([]);
+	const [order, setOrder] = useState(initialState);
 	const [tip, setTip] = useState(0);
+
+	useEffect(() => {
+		localStorage.setItem('order', JSON.stringify(order))
+	}, [order])
 
 	const addItem = (item: MenuItems) => {
 		const itemExist = order.find(orderItem => orderItem.id === item.id)
