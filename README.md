@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Menú para restaurantes en React | Proyecto Final
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Estado del proyecto](https://img.shields.io/badge/Estado-Terminado-success?style=for-the-badge)](https://github.com/tu-usuario/tu-repo)
+[![Universidad](https://img.shields.io/badge/Universidad-UTBC-blue?style=for-the-badge&logo=)](https://tuni.edu.mx)
+[![Materia](https://img.shields.io/badge/Materia-Programación%20Web%201-9cf?style=for-the-badge)](https://github.com/tu-usuario/tu-repo)
+[![Semestre](https://img.shields.io/badge/Semestre-N81-IDS?style=for-the-badge)](https://github.com/LHeriberto-21/ReactCalculadora.git)
 
-Currently, two official plugins are available:
+## React + TypeScript + Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta plantilla proporciona una configuración mínima para que React funcione en Vite con HMR y algunas reglas ESLint.
 
-## React Compiler
+Actualmente, hay dos complementos oficiales disponibles:
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) utiliza [Babel](https://babeljs.io/) para la actualización rápida
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) utiliza [SWC](https://swc.rs/) para la actualización rápida
 
-## Expanding the ESLint configuration
+## Compilador de React
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+El compilador React actualmente no es compatible con SWC. Consulte [este problema](https://github.com/vitejs/vite-plugin-react/issues/428) para seguir el progreso.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📖 Descripción del proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Proyecto final sobre una calculadora de consumo, donde simula un restaurante y la cuenta de todo el consumo que solicitó.  
+Desarrollado como parte de la materia **Programación Web 1** durante el semestre **2026-IDS-N81** en **Universidad Tecnológica de Baja California**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Dirección en producción:**
+[Quires verlo en produccion? Da click aquí](https://calculator-consum.netlify.app/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**¿Qué lo hace diferente?**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Renderización de componentes de lo que solicite el usuario
+- Creacion de Custom Hooks para separar la logica de las implementaciones, diseño responsive
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Demostración rápida en producción
+
+![Captura 1](public/img/image.png)
+![Captura 2](public/img/img-2.png)
+
+## Tecnologías usadas
+
+| React | Prettier | JavaScript | TypeScript | GitHub |
+| ----- | --------- | ----------- | ---------- | ------ |
+| ![React](https://techstack-generator.vercel.app/react-icon.svg) | ![Prettier](https://techstack-generator.vercel.app/prettier-icon.svg) | ![JavaScript](https://techstack-generator.vercel.app/js-icon.svg) | ![TypeScript](https://techstack-generator.vercel.app/ts-icon.svg) | ![GitHub](https://techstack-generator.vercel.app/github-icon.svg) |
+
+## Instalación y ejecución (en menos de 2 minutos)
+
+```bash
+# crear una folder para las herramientas a usar
+mkdir ReactCalculadora
+
+# Entrar a la carpeta que se creó
+cd ReactCalculadora
+
+# crear un proyecto con vite
+npm create @vite/latest
+
+# instalar dependencias estando dentro de la carpeta en donde se instalarán las dep
+npm install
+
+# Comenzar con el servidor con Vite
+npm run dev
 ```
